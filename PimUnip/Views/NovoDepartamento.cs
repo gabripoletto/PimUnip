@@ -1,5 +1,4 @@
-﻿using PimUnip.DAO;
-using PimUnip.Models;
+﻿using PimUnip.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
