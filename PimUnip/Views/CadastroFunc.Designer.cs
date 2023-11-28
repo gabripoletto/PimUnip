@@ -52,7 +52,7 @@
             // 
             // inputNomeFunc
             // 
-            inputNomeFunc.ForeColor = SystemColors.ScrollBar;
+            inputNomeFunc.ForeColor = SystemColors.InfoText;
             inputNomeFunc.Location = new Point(275, 87);
             inputNomeFunc.Name = "inputNomeFunc";
             inputNomeFunc.Size = new Size(243, 23);
@@ -62,7 +62,7 @@
             // 
             // inputCpfFunc
             // 
-            inputCpfFunc.ForeColor = SystemColors.ScrollBar;
+            inputCpfFunc.ForeColor = SystemColors.InfoText;
             inputCpfFunc.Location = new Point(275, 116);
             inputCpfFunc.Name = "inputCpfFunc";
             inputCpfFunc.Size = new Size(243, 23);
@@ -72,7 +72,7 @@
             // 
             // inputIdadeFunc
             // 
-            inputIdadeFunc.ForeColor = SystemColors.ScrollBar;
+            inputIdadeFunc.ForeColor = SystemColors.InfoText;
             inputIdadeFunc.Location = new Point(275, 145);
             inputIdadeFunc.Name = "inputIdadeFunc";
             inputIdadeFunc.Size = new Size(243, 23);
@@ -82,7 +82,7 @@
             // 
             // inputEndFunc
             // 
-            inputEndFunc.ForeColor = SystemColors.ScrollBar;
+            inputEndFunc.ForeColor = SystemColors.InfoText;
             inputEndFunc.Location = new Point(275, 174);
             inputEndFunc.Multiline = true;
             inputEndFunc.Name = "inputEndFunc";
@@ -93,7 +93,7 @@
             // 
             // inputTelFunc
             // 
-            inputTelFunc.ForeColor = SystemColors.ScrollBar;
+            inputTelFunc.ForeColor = SystemColors.InfoText;
             inputTelFunc.Location = new Point(275, 234);
             inputTelFunc.Name = "inputTelFunc";
             inputTelFunc.Size = new Size(243, 23);
@@ -103,7 +103,7 @@
             // 
             // inputCargoFunc
             // 
-            inputCargoFunc.ForeColor = SystemColors.ScrollBar;
+            inputCargoFunc.ForeColor = SystemColors.InfoText;
             inputCargoFunc.Location = new Point(275, 263);
             inputCargoFunc.Name = "inputCargoFunc";
             inputCargoFunc.Size = new Size(243, 23);
@@ -133,7 +133,7 @@
             // 
             // inputSalario
             // 
-            inputSalario.ForeColor = SystemColors.ScrollBar;
+            inputSalario.ForeColor = SystemColors.InfoText;
             inputSalario.Location = new Point(275, 292);
             inputSalario.Name = "inputSalario";
             inputSalario.Size = new Size(243, 23);
@@ -143,7 +143,7 @@
             // 
             // IdDep
             // 
-            IdDep.ForeColor = SystemColors.ScrollBar;
+            IdDep.ForeColor = SystemColors.InfoText;
             IdDep.Location = new Point(275, 321);
             IdDep.Name = "IdDep";
             IdDep.Size = new Size(243, 23);

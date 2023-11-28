@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace PimUnip
 {
-    public partial class CadastroFunc : Form 
+    public partial class CadastroFunc : Form
     {
         public CadastroFunc()
         {
