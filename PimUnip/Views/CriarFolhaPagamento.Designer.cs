@@ -46,7 +46,7 @@
             // 
             // hrs_trab
             // 
-            hrs_trab.ForeColor = SystemColors.ScrollBar;
+            hrs_trab.ForeColor = SystemColors.InfoText;
             hrs_trab.Location = new Point(247, 131);
             hrs_trab.Name = "hrs_trab";
             hrs_trab.Size = new Size(241, 23);
@@ -56,7 +56,7 @@
             // 
             // sal_bruto
             // 
-            sal_bruto.ForeColor = SystemColors.ScrollBar;
+            sal_bruto.ForeColor = SystemColors.InfoText;
             sal_bruto.Location = new Point(247, 174);
             sal_bruto.Name = "sal_bruto";
             sal_bruto.Size = new Size(241, 23);

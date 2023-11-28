@@ -56,7 +56,7 @@
             // 
             // inputNovoDepartamento
             // 
-            inputNovoDepartamento.ForeColor = SystemColors.ScrollBar;
+            inputNovoDepartamento.ForeColor = SystemColors.InfoText;
             inputNovoDepartamento.Location = new Point(278, 113);
             inputNovoDepartamento.Name = "inputNovoDepartamento";
             inputNovoDepartamento.Size = new Size(201, 23);
@@ -66,7 +66,7 @@
             // 
             // inputSalarioDep
             // 
-            inputSalarioDep.ForeColor = SystemColors.ScrollBar;
+            inputSalarioDep.ForeColor = SystemColors.InfoText;
             inputSalarioDep.Location = new Point(278, 156);
             inputSalarioDep.Name = "inputSalarioDep";
             inputSalarioDep.Size = new Size(201, 23);

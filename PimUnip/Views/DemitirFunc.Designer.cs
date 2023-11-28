@@ -46,7 +46,7 @@
             // 
             // input_id_func_delete
             // 
-            input_id_func_delete.ForeColor = SystemColors.ScrollBar;
+            input_id_func_delete.ForeColor = SystemColors.InfoText;
             input_id_func_delete.Location = new Point(304, 95);
             input_id_func_delete.Name = "input_id_func_delete";
             input_id_func_delete.Size = new Size(193, 23);

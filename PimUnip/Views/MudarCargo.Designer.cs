@@ -47,7 +47,7 @@
             // 
             // inputIdFunc
             // 
-            inputIdFunc.ForeColor = SystemColors.ScrollBar;
+            inputIdFunc.ForeColor = SystemColors.InfoText;
             inputIdFunc.Location = new Point(259, 119);
             inputIdFunc.Name = "inputIdFunc";
             inputIdFunc.Size = new Size(258, 23);
@@ -57,7 +57,7 @@
             // 
             // inputNewCargo
             // 
-            inputNewCargo.ForeColor = SystemColors.ScrollBar;
+            inputNewCargo.ForeColor = SystemColors.InfoText;
             inputNewCargo.Location = new Point(259, 148);
             inputNewCargo.Name = "inputNewCargo";
             inputNewCargo.Size = new Size(258, 23);
@@ -67,7 +67,7 @@
             // 
             // inputAumento
             // 
-            inputAumento.ForeColor = SystemColors.ScrollBar;
+            inputAumento.ForeColor = SystemColors.InfoText;
             inputAumento.Location = new Point(259, 177);
             inputAumento.Name = "inputAumento";
             inputAumento.Size = new Size(258, 23);
