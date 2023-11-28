@@ -48,5 +48,11 @@ namespace PimUnip
             FolhaPagamento folhaPagamento = new FolhaPagamento();
             folhaPagamento.Show();
         }
+
+        private void PagFolha_Click(object sender, EventArgs e)
+        {
+            CriarFolhaPagamento newfolhaPagamento = new CriarFolhaPagamento();
+            newfolhaPagamento.Show();
+        }
     }
 }

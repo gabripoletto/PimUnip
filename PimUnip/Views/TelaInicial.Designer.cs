@@ -34,11 +34,12 @@
             edit_cargo = new Button();
             list_func = new Button();
             pagamento = new Button();
+            PagFolha = new Button();
             SuspendLayout();
             // 
             // new_func
             // 
-            new_func.Location = new Point(280, 93);
+            new_func.Location = new Point(280, 52);
             new_func.Name = "new_func";
             new_func.Size = new Size(207, 47);
             new_func.TabIndex = 0;
@@ -48,7 +49,7 @@
             // 
             // delete_func
             // 
-            delete_func.Location = new Point(280, 146);
+            delete_func.Location = new Point(280, 105);
             delete_func.Name = "delete_func";
             delete_func.Size = new Size(207, 47);
             delete_func.TabIndex = 1;
@@ -58,7 +59,7 @@
             // 
             // new_depart
             // 
-            new_depart.Location = new Point(280, 199);
+            new_depart.Location = new Point(280, 158);
             new_depart.Name = "new_depart";
             new_depart.Size = new Size(207, 47);
             new_depart.TabIndex = 2;
@@ -68,7 +69,7 @@
             // 
             // edit_cargo
             // 
-            edit_cargo.Location = new Point(280, 252);
+            edit_cargo.Location = new Point(280, 211);
             edit_cargo.Name = "edit_cargo";
             edit_cargo.Size = new Size(207, 47);
             edit_cargo.TabIndex = 4;
@@ -78,7 +79,7 @@
             // 
             // list_func
             // 
-            list_func.Location = new Point(280, 305);
+            list_func.Location = new Point(280, 264);
             list_func.Name = "list_func";
             list_func.Size = new Size(207, 47);
             list_func.TabIndex = 5;
@@ -88,19 +89,30 @@
             // 
             // pagamento
             // 
-            pagamento.Location = new Point(280, 358);
+            pagamento.Location = new Point(280, 370);
             pagamento.Name = "pagamento";
             pagamento.Size = new Size(207, 47);
             pagamento.TabIndex = 6;
-            pagamento.Text = "Folha de Pagamento";
+            pagamento.Text = "Listar Folhas de Pagamento";
             pagamento.UseVisualStyleBackColor = true;
             pagamento.Click += pagamento_Click;
+            // 
+            // PagFolha
+            // 
+            PagFolha.Location = new Point(280, 317);
+            PagFolha.Name = "PagFolha";
+            PagFolha.Size = new Size(207, 47);
+            PagFolha.TabIndex = 7;
+            PagFolha.Text = "Criar Folha De Pagamento";
+            PagFolha.UseVisualStyleBackColor = true;
+            PagFolha.Click += PagFolha_Click;
             // 
             // TelaInicial
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(800, 487);
+            Controls.Add(PagFolha);
             Controls.Add(pagamento);
             Controls.Add(list_func);
             Controls.Add(edit_cargo);
@@ -120,5 +132,6 @@
         private Button edit_cargo;
         private Button list_func;
         private Button pagamento;
+        private Button PagFolha;
     }
 }
