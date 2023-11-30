@@ -1,4 +1,5 @@
-﻿using PimUnip.Models;
+﻿using PimUnip.Controllers;
+using PimUnip.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,15 +15,18 @@ namespace PimUnip.Views
 {
     public partial class ListaFuncionarios : Form
     {
-        public ListaFuncionarios()
+        private readonly FuncionarioController _controller;
+        public ListaFuncionarios(FuncionarioController controller)
         {
             InitializeComponent();
             CarregarDados();
+
+            _controller = controller;
         }
 
         private void CarregarDados()
         {
-            List<Funcionario> listaFuncionarios = ObterTodosFuncionarios();
+            List<Funcionario> listaFuncionarios = _controller.ListarFuncionarios();
 
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = listaFuncionarios;
@@ -31,38 +35,6 @@ namespace PimUnip.Views
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        public List<Funcionario> ObterTodosFuncionarios()
-        {
-            List<Funcionario> funcionarios = new List<Funcionario>();
-
-            using (SqlConnection connection = new SqlConnection(@"Data Source=PEDROSNOTE; integrated security=SSPI;initial catalog=SQL_Imobiliaria"))
-            {
-                connection.Open();
-
-                string query = "SELECT * FROM funcionarios";
-
-                SqlCommand command = new SqlCommand(query, connection);
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    Funcionario funcionario = new Funcionario
-                    {
-                        Id = reader["id_Funcionario"].ToString(),
-                        Nome = reader["nome"].ToString(),
-                        Idade = Convert.ToInt32(reader["idade"]),
-                        Endereco = reader["endereco"].ToString(),
-                        Telefone = reader["telefone"].ToString(),
-                        Cargo = reader["cargo"].ToString()
-                    };
-
-                    funcionarios.Add(funcionario);
-                }
-            }
-
-            return funcionarios;
         }
     }
 }

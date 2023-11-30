@@ -1,4 +1,5 @@
-﻿using PimUnip.Models;
+﻿using PimUnip.Controllers;
+using PimUnip.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,12 @@ namespace PimUnip.Views
 {
     public partial class NovoDepartamento : Form
     {
-        public NovoDepartamento()
+        private readonly DepartamentoController _controller;
+        public NovoDepartamento(DepartamentoController controller)
         {
             InitializeComponent();
+
+            _controller = controller;
         }
 
         private void sendNewDep_Click(object sender, EventArgs e)
@@ -27,32 +31,11 @@ namespace PimUnip.Views
                 SalarioBase = float.Parse(inputSalarioDep.Text),
             };
 
-            var result = Departamento.Parse(departamento);
-
-            InserirDepartamento(result);
+            _controller.AdicionarDepartamento(departamento);
         }
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        public void InserirDepartamento(Departamento departamento)
-        {
-            using (SqlConnection connection = new SqlConnection(@"Data Source=PEDROSNOTE; integrated security=SSPI;initial catalog=SQL_Imobiliaria"))
-            {
-                connection.Open();
-
-                string query = "INSERT INTO departamento (id_Departamento, nome_Departamento, funcionarios, salario_Base) " +
-                               "VALUES (@IdDepartamento, @NomeDepartamento, @Funcionarios, @SalarioBase)";
-
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@IdDepartamento", departamento.IdDepartamento);
-                command.Parameters.AddWithValue("@NomeDepartamento", departamento.NomeDepartamento);
-                command.Parameters.AddWithValue("@Funcionarios", departamento.Funcionarios);
-                command.Parameters.AddWithValue("@SalarioBase", departamento.SalarioBase);
-
-                command.ExecuteNonQuery();
-            }
         }
     }
 }

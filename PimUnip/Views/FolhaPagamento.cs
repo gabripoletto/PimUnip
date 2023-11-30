@@ -1,4 +1,5 @@
-﻿using PimUnip.Models;
+﻿using PimUnip.Controllers;
+using PimUnip.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,48 +15,21 @@ namespace PimUnip.Views
 {
     public partial class FolhaPagamento : Form
     {
-        public FolhaPagamento()
+        private readonly FolhaPagamentoController _controller;
+        public FolhaPagamento(FolhaPagamentoController controller)
         {
             InitializeComponent();
             CarregarDados();
+
+            _controller = controller;
         }
 
         private void CarregarDados()
         {
-            List<FolhaPagamentoModal> folhasPagamento = ObterTodasFolhasPagamento();
+            List<FolhaPagamentoModal> folhasPagamento = _controller.ListarFolhaPagamento();
 
             dataGridView1.AutoGenerateColumns = true;
             dataGridView1.DataSource = folhasPagamento;
-        }
-
-        public List<FolhaPagamentoModal> ObterTodasFolhasPagamento()
-        {
-            List<FolhaPagamentoModal> folhasPagamento = new List<FolhaPagamentoModal>();
-
-            using (SqlConnection connection = new SqlConnection(@"Data Source=PEDROSNOTE; integrated security=SSPI;initial catalog=SQL_Imobiliaria"))
-            {
-                connection.Open();
-
-                string query = "SELECT * FROM folha_Pagamento";
-
-                SqlCommand command = new SqlCommand(query, connection);
-                SqlDataReader reader = command.ExecuteReader();
-
-                while (reader.Read())
-                {
-                    FolhaPagamentoModal folha = new FolhaPagamentoModal
-                    {
-                        IdFolha = Guid.NewGuid(),
-                        HorasTrabalhadas = Convert.ToSingle(reader["hrs_Trabalhadas"]),
-                        SalarioBruto = Convert.ToSingle(reader["salario_Bruto"]),
-                        SalarioLiquido = Convert.ToSingle(reader["salario_Liquido"])
-                    };
-
-                    folhasPagamento.Add(folha);
-                }
-            }
-
-            return folhasPagamento;
         }
     }
 }

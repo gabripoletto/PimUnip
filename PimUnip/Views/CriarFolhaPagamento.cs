@@ -1,4 +1,5 @@
-﻿using PimUnip.Models;
+﻿using PimUnip.Controllers;
+using PimUnip.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,9 +15,13 @@ namespace PimUnip.Views
 {
     public partial class CriarFolhaPagamento : Form
     {
-        public CriarFolhaPagamento()
+        private readonly FolhaPagamentoController _controller;
+
+        public CriarFolhaPagamento(FolhaPagamentoController controller)
         {
             InitializeComponent();
+
+            _controller = controller;
         }
 
         private void criar_Click(object sender, EventArgs e)
@@ -31,25 +36,7 @@ namespace PimUnip.Views
                 SalarioLiquido = (float.Parse(sal_bruto.Text) * descontoPercentual) / 100,
             };
 
-            novaFolhaPagamento(newPagamento);
-        }
-
-        public void novaFolhaPagamento(FolhaPagamentoModal request)
-        {
-            string query = $"INSERT INTO folha_Pagamento (id_folha_pagamento, hrs_Trabalhadas, salario_Bruto, salario_Liquido) " +
-                   $"VALUES ('{request.IdFolha}', {request.HorasTrabalhadas}, {request.SalarioBruto}, {request.SalarioLiquido})";
-
-            string connectionString = "@\"Data Source=PEDROSNOTE; integrated security=SSPI;initial catalog=SQL_Imobiliaria\"";
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.ExecuteNonQuery();
-                }
-            }
+            _controller.CriarFolhaPagamento(newPagamento);
         }
     }
 }

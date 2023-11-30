@@ -38,15 +38,15 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(289, 40);
+            label1.Location = new Point(325, 80);
             label1.Name = "label1";
-            label1.Size = new Size(169, 15);
+            label1.Size = new Size(136, 15);
             label1.TabIndex = 0;
-            label1.Text = "Adicionar Novo Departamento";
+            label1.Text = "Cadastrar Departamento";
             // 
             // sendNewDep
             // 
-            sendNewDep.Location = new Point(278, 222);
+            sendNewDep.Location = new Point(287, 211);
             sendNewDep.Name = "sendNewDep";
             sendNewDep.Size = new Size(201, 31);
             sendNewDep.TabIndex = 1;
@@ -57,7 +57,7 @@
             // inputNovoDepartamento
             // 
             inputNovoDepartamento.ForeColor = SystemColors.InfoText;
-            inputNovoDepartamento.Location = new Point(278, 113);
+            inputNovoDepartamento.Location = new Point(287, 119);
             inputNovoDepartamento.Name = "inputNovoDepartamento";
             inputNovoDepartamento.Size = new Size(201, 23);
             inputNovoDepartamento.TabIndex = 2;
@@ -67,7 +67,7 @@
             // inputSalarioDep
             // 
             inputSalarioDep.ForeColor = SystemColors.InfoText;
-            inputSalarioDep.Location = new Point(278, 156);
+            inputSalarioDep.Location = new Point(287, 160);
             inputSalarioDep.Name = "inputSalarioDep";
             inputSalarioDep.Size = new Size(201, 23);
             inputSalarioDep.TabIndex = 3;

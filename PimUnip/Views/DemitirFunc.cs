@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PimUnip.Controllers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,33 +14,22 @@ namespace PimUnip
 {
     public partial class DemitirFunc : Form
     {
-        public DemitirFunc()
+        private readonly FuncionarioController _controller;
+        public DemitirFunc(FuncionarioController controller)
         {
             InitializeComponent();
+
+            _controller = controller;
         }
         private void delete_func_Click(object sender, EventArgs e)
         {
             var idExclusao = input_id_func_delete.Text;
-            ExcluirFuncionario(idExclusao);
+
+            _controller.ExcluirFuncionario(idExclusao);
         }
         private void backButton_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        public void ExcluirFuncionario(string idFuncionario)
-        {
-            using (SqlConnection connection = new SqlConnection(@"Data Source=PEDROSNOTE; integrated security=SSPI;initial catalog=SQL_Imobiliaria"))
-            {
-                connection.Open();
-
-                string query = "DELETE FROM funcionarios WHERE id_Funcionario = @IdFuncionario";
-
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@IdFuncionario", idFuncionario);
-
-                command.ExecuteNonQuery();
-            }
         }
     }
 }
